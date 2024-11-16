@@ -11,6 +11,7 @@ import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 // import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Toolkit;
 
 public class InputScreen extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -18,6 +19,8 @@ public class InputScreen extends JFrame {
     public JTextArea textArea;
     
     public InputScreen() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/Image/sudoku.png")));
+        
         setResizable(false);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setBounds(100, 100, 200, 280);

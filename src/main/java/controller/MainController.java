@@ -32,12 +32,9 @@ public class MainController implements ActionListener{
                     System.out.println(inputScreen.textArea.getText());
                     SudokuSolver solver = new SudokuSolver(inputScreen.textArea.getText());
                     if(solver.solveSudoku()) {
-                        System.out.println("dung");
-                        solver.PrintBoard();
                         mainScreen.textScreen.setText(solver.buildSudoku().toString());
                     }
                     else {
-                        System.out.println("sai");
                         mainScreen.textScreen.setText("Invalid Input");
                     }
                     inputScreen.dispose();

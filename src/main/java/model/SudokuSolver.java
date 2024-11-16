@@ -69,7 +69,7 @@ public class SudokuSolver {
         builder.append("<pre></html>");
         return builder;
     }
-    public void PrintBoard() {
+    public void PrintBoard() { // debug
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 System.out.print(board[i][j] + " ");

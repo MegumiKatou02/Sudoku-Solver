@@ -21,7 +21,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
-                    <argLine>-Djava.awt.headless=true</argLine> <!-- Chạy trong chế độ headless -->
+                    <argLine>-Djava.awt.headless=true</argLine>
                 </configuration>
             </plugin>
             <plugin>
@@ -31,7 +31,7 @@
             <configuration>
                 <archive>
                     <manifestEntries>
-                        <Main-Class>run.Main</Main-Class> <!-- Thêm lớp chính của bạn ở đây -->
+                        <Main-Class>run.Main</Main-Class> 
                     </manifestEntries>
                 </archive>
             </configuration>

@@ -12,6 +12,7 @@ import controller.MainController;
 
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Toolkit;
 
 public class MainScreen extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -23,10 +24,12 @@ public class MainScreen extends JFrame {
     public JLabel textScreen;
 
     public MainScreen() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/Image/sudoku.png")));
+
         setTitle("Sudoku Solver");
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 350);
+		setBounds(100, 100, 450, 420);
         setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -63,11 +66,11 @@ public class MainScreen extends JFrame {
         sourceCode.setBackground(Color.decode("#7AB2D3"));
         contentPane.add(sourceCode);
 
-        textScreen = new JLabel("ddfdfd");
+        textScreen = new JLabel(" ");
         textScreen.setFont(new Font("Tahoma", Font.PLAIN, 20));
         textScreen.setOpaque(true);
         textScreen.setBackground(Color.WHITE);
-		textScreen.setBounds(0, 85, 434, 180 - 6 + 50);
+		textScreen.setBounds(0, 85, 434, 180 - 6 + 130);
         contentPane.add(textScreen);
 
         input.addActionListener(mainController);
