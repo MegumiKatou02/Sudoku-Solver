@@ -1,4 +1,2 @@
-view\Member.class
-view\Generation.class
-view\Program.class
-view\Program$1.class
+run\Main.class
+view\MainScreen.class

@@ -31,7 +31,7 @@
             <configuration>
                 <archive>
                     <manifestEntries>
-                        <Main-Class>view.Program</Main-Class> <!-- Thêm lớp chính của bạn ở đây -->
+                        <Main-Class>run.Main</Main-Class> <!-- Thêm lớp chính của bạn ở đây -->
                     </manifestEntries>
                 </archive>
             </configuration>
