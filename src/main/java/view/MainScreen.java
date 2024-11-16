@@ -25,7 +25,7 @@ public class MainScreen extends JFrame {
     public JButton copy;
     
     public MainScreen() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/Image/sudoku.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/image/sudoku.png")));
 
         setTitle("Sudoku Solver");
         setResizable(false);

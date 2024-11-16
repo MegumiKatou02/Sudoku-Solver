@@ -7,8 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URI;
 
-import javax.swing.JOptionPane;
-
 import model.Guide;
 import model.SudokuSolver;
 import view.InputScreen;

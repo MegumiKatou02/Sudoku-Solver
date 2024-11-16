@@ -1,2 +1,6 @@
-run\Main.class
+view\InputScreen.class
 view\MainScreen.class
+model\Guide.class
+model\SudokuSolver.class
+run\Main.class
+controller\MainController.class

@@ -19,7 +19,7 @@ public class InputScreen extends JFrame {
     public JTextArea textArea;
     
     public InputScreen() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/Image/sudoku.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/image/sudoku.png")));
         
         setResizable(false);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
