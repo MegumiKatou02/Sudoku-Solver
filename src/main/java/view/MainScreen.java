@@ -16,11 +16,11 @@ import java.awt.Font;
 public class MainScreen extends JFrame {
     private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-    private JLabel title;
+    public JLabel title;
     public JButton input;
     public JButton guide;
     public JButton sourceCode;
-    private JLabel textScreen;
+    public JLabel textScreen;
 
     public MainScreen() {
         setTitle("Sudoku Solver");
@@ -37,7 +37,7 @@ public class MainScreen extends JFrame {
 
         title = new JLabel("Sudoku Solving Application");
         title.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		title.setBounds(100, 4, 242, 28);
+		title.setBounds(100, 4, 400, 28);
         contentPane.add(title);
 
         MainController mainController = new MainController(this);
@@ -48,7 +48,6 @@ public class MainScreen extends JFrame {
         input.setFocusable(false);
         input.setBackground(Color.decode("#7AB2D3"));
         contentPane.add(input);
-        input.addActionListener(mainController);
 
         guide = new JButton("GUIDE");
         guide.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -65,9 +64,14 @@ public class MainScreen extends JFrame {
         contentPane.add(sourceCode);
 
         textScreen = new JLabel("ddfdfd");
+        textScreen.setFont(new Font("Tahoma", Font.PLAIN, 20));
         textScreen.setOpaque(true);
         textScreen.setBackground(Color.WHITE);
 		textScreen.setBounds(0, 85, 434, 180 - 6);
         contentPane.add(textScreen);
+
+        input.addActionListener(mainController);
+        guide.addActionListener(mainController);
+        sourceCode.addActionListener(mainController);        
     }
 }
