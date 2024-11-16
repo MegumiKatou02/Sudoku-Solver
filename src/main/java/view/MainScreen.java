@@ -7,22 +7,27 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controller.MainController;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 
-public class MainScreen extends JFrame{
+public class MainScreen extends JFrame {
     private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
     private JLabel title;
-    private JButton input;
-    private JButton sourceCode;
-    private JButton guide;
+    public JButton input;
+    public JButton guide;
+    public JButton sourceCode;
     private JLabel textScreen;
 
     public MainScreen() {
         setTitle("Sudoku Solver");
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
+        setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setBackground(Color.decode("#DFF2EB"));
@@ -35,13 +40,16 @@ public class MainScreen extends JFrame{
 		title.setBounds(100, 4, 242, 28);
         contentPane.add(title);
 
+        MainController mainController = new MainController(this);
+
         input = new JButton("INPUT");
         input.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		input.setBounds(0, 50, 100, 28);
         input.setFocusable(false);
         input.setBackground(Color.decode("#7AB2D3"));
         contentPane.add(input);
-        
+        input.addActionListener(mainController);
+
         guide = new JButton("GUIDE");
         guide.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		guide.setBounds(118, 50, 100, 28);
