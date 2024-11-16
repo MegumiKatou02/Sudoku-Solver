@@ -9,6 +9,7 @@ import java.net.URI;
 
 import model.Guide;
 import model.SudokuSolver;
+import model.SudokuValid;
 import view.InputScreen;
 import view.MainScreen;
 
@@ -32,7 +33,12 @@ public class MainController implements ActionListener{
             }
             else {
                 if(inputScreen != null) {
-                    System.out.println(inputScreen.textArea.getText());
+                    // System.out.println(inputScreen.textArea.getText());
+                    if(!SudokuValid.isValidSudokuInput(inputScreen.textArea.getText())) {
+                        mainScreen.textScreen.setText("Invalid syntax");
+                        return;
+                    }
+  
                     SudokuSolver solver = new SudokuSolver(inputScreen.textArea.getText());
                     if(solver.solveSudoku()) {
                         mainScreen.textScreen.setText(solver.buildSudoku().toString());
