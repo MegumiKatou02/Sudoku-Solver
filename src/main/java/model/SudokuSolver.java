@@ -77,4 +77,16 @@ public class SudokuSolver {
             System.out.println();
         }
     }
+    public String BoardString() {
+        String ans = "";
+
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                if(j == 8) ans += board[i][j];
+                else ans += board[i][j] + " ";
+            }
+            ans += "\n";
+        }
+        return ans;
+    }
 }

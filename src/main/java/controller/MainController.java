@@ -1,9 +1,13 @@
 package controller;
 
 import java.awt.Desktop;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URI;
+
+import javax.swing.JOptionPane;
 
 import model.Guide;
 import model.SudokuSolver;
@@ -13,6 +17,7 @@ import view.MainScreen;
 public class MainController implements ActionListener{
     private MainScreen mainScreen;
     private InputScreen inputScreen;
+    private String ans;
     
     public MainController(MainScreen mainScreen) {
         this.mainScreen = mainScreen;
@@ -33,6 +38,7 @@ public class MainController implements ActionListener{
                     SudokuSolver solver = new SudokuSolver(inputScreen.textArea.getText());
                     if(solver.solveSudoku()) {
                         mainScreen.textScreen.setText(solver.buildSudoku().toString());
+                        this.ans = solver.BoardString();
                     }
                     else {
                         mainScreen.textScreen.setText("Invalid Input");
@@ -52,6 +58,15 @@ public class MainController implements ActionListener{
                     Desktop.getDesktop().browse(uri); 
                 } catch (Exception ex) {
                     ex.printStackTrace();
+                }
+            }
+            if(e.getSource() == mainScreen.copy) {
+                if(this.ans != null) {
+                    String text = this.ans;
+                    if (!text.isEmpty()) {
+                        StringSelection selection = new StringSelection(text);
+                        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+                    }
                 }
             }
     }
