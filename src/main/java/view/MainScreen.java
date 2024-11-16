@@ -26,7 +26,7 @@ public class MainScreen extends JFrame {
         setTitle("Sudoku Solver");
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 350);
         setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -67,7 +67,7 @@ public class MainScreen extends JFrame {
         textScreen.setFont(new Font("Tahoma", Font.PLAIN, 20));
         textScreen.setOpaque(true);
         textScreen.setBackground(Color.WHITE);
-		textScreen.setBounds(0, 85, 434, 180 - 6);
+		textScreen.setBounds(0, 85, 434, 180 - 6 + 50);
         contentPane.add(textScreen);
 
         input.addActionListener(mainController);

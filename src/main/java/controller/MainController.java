@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.net.URI;
 
 import model.Guide;
+import model.SudokuSolver;
 import view.InputScreen;
 import view.MainScreen;
 
@@ -28,12 +29,21 @@ public class MainController implements ActionListener{
             }
             else {
                 if(inputScreen != null) {
+                    System.out.println(inputScreen.textArea.getText());
+                    SudokuSolver solver = new SudokuSolver(inputScreen.textArea.getText());
+                    if(solver.solveSudoku()) {
+                        System.out.println("dung");
+                        solver.PrintBoard();
+                        mainScreen.textScreen.setText(solver.buildSudoku().toString());
+                    }
+                    else {
+                        System.out.println("sai");
+                        mainScreen.textScreen.setText("Invalid Input");
+                    }
                     inputScreen.dispose();
                     inputScreen = null;
                 }
                 mainScreen.title.setText("Sudoku Solving Application");
-
-                // solve code
             }
             if(e.getSource() == mainScreen.guide) {
                 Guide guide = new Guide();
@@ -50,3 +60,15 @@ public class MainController implements ActionListener{
     }
     
 }
+
+/*
+ 5 3 . . 7 . . . .
+6 . . 1 9 5 . . .
+. 9 8 . . . . 6 .
+8 . . . 6 . . . 3
+4 . . 8 . 3 . . 1
+7 . . . 2 . . . 6
+. 6 . . . . 2 8 .
+. . . 4 1 9 . . 5
+. . . . 8 . . 7 9
+ */
