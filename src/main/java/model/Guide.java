@@ -15,4 +15,4 @@ public class Guide {
     public StringBuilder getStringBuilder() {
         return str;
     }
-}
+} 
