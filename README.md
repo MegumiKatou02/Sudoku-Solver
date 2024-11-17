@@ -12,3 +12,5 @@ Sudoku Solver is a Java application designed to quickly and efficiently solve Su
 * Supports Two Input Formats:
     - Space-separated data (e.g., 0 7 3 2 . . . 4 9).
     - Continuous string input (e.g., 53..7....).
+# dowloand file .jar (Executable file)
+[Sudoku Solver](https://github.com/MegumiKatou02/Sudoku-Solver/blob/master/target/SudokuSolver-1.1.jar)
