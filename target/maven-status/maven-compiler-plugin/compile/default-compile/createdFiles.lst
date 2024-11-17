@@ -1,6 +1,7 @@
 view\InputScreen.class
 view\MainScreen.class
 model\Guide.class
+model\SudokuValid.class
 model\SudokuSolver.class
 run\Main.class
 controller\MainController.class
