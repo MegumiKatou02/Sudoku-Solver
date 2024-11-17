@@ -10,13 +10,46 @@ public class SudokuSolver {
         FixString();
     }
     private void FixString() {
-        if(txt.isEmpty()) return;
+        if (txt.isEmpty()) {
+            throw new IllegalArgumentException("Input cannot be empty.");
+        }
+    
         String[] rows = txt.split("\n");
-        for (int i = 0; i < rows.length; i++) {
-            String[] numbers = rows[i].trim().split("\\s+");
-            for (int j = 0; j < numbers.length; j++) {
-                board[i][j] = numbers[j].charAt(0); 
+    
+        if (rows.length == 9 && rows[0].contains(" ")) {
+            for (int i = 0; i < rows.length; i++) {
+                String row = rows[i].trim();
+                String[] cells = row.split("\\s+");
+                if (cells.length != 9) {
+                    throw new IllegalArgumentException("Each row must have exactly 9 cells.");
+                }
+                for (int j = 0; j < 9; j++) {
+                    char cell = cells[j].charAt(0);
+                    if (cell == '0') cell = '.'; // Chuyển 0 thành .
+                    if (cell != '.' && (cell < '1' || cell > '9')) {
+                        throw new IllegalArgumentException("Invalid character '" + cell + "' at row " + (i + 1) + ", column " + (j + 1));
+                    }
+                    board[i][j] = cell;
+                }
             }
+        }
+        else if ((rows.length == 9 && !rows[0].contains(" ")) || (rows.length == 1 && rows[0].length() == 81)) {
+            String continuousInput = rows.length == 1 ? rows[0] : String.join("", rows);
+            if (continuousInput.length() != 81) {
+                throw new IllegalArgumentException("Input must have exactly 81 characters.");
+            }
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    char cell = continuousInput.charAt(i * 9 + j);
+                    if (cell == '0') cell = '.'; // Chuyển 0 thành .
+                    if (cell != '.' && (cell < '1' || cell > '9')) {
+                        throw new IllegalArgumentException("Invalid character '" + cell + "' at position " + (i * 9 + j + 1));
+                    }
+                    board[i][j] = cell;
+                }
+            }
+        } else {
+            throw new IllegalArgumentException("Input format is invalid. Must be 9 rows with 9 cells each, or a single 81-character string.");
         }
     }
     private boolean isValid(int row, int col, char num) {

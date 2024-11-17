@@ -33,9 +33,11 @@ public class MainController implements ActionListener{
             }
             else {
                 if(inputScreen != null) {
-                    // System.out.println(inputScreen.textArea.getText());
+                    System.out.println(inputScreen.textArea.getText());
                     if(!SudokuValid.isValidSudokuInput(inputScreen.textArea.getText())) {
                         mainScreen.textScreen.setText("Invalid syntax");
+                        inputScreen.dispose();
+                        inputScreen = null;
                         return;
                     }
   
@@ -87,4 +89,15 @@ public class MainController implements ActionListener{
 . 6 . . . . 2 8 .
 . . . 4 1 9 . . 5
 . . . . 8 . . 7 9
+
+53..7....
+6..195...
+.98....6.
+8...6...3
+4..8.3..1
+7...2...6
+.6....28.
+...419..5
+....8..79
+
  */
