@@ -35,7 +35,7 @@ public class MainController implements ActionListener{
                 if(inputScreen != null) {
                     System.out.println(inputScreen.textArea.getText());
                     if(!SudokuValid.isValidSudokuInput(inputScreen.textArea.getText())) {
-                        mainScreen.textScreen.setText("Invalid syntax");
+                        mainScreen.textScreen.setText(SudokuValid.getErrorString());
                         inputScreen.dispose();
                         inputScreen = null;
                         return;

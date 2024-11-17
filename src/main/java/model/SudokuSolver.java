@@ -25,7 +25,7 @@ public class SudokuSolver {
                 }
                 for (int j = 0; j < 9; j++) {
                     char cell = cells[j].charAt(0);
-                    if (cell == '0') cell = '.'; // Chuyển 0 thành .
+                    if (cell == '0') cell = '.';
                     if (cell != '.' && (cell < '1' || cell > '9')) {
                         throw new IllegalArgumentException("Invalid character '" + cell + "' at row " + (i + 1) + ", column " + (j + 1));
                     }
@@ -41,7 +41,7 @@ public class SudokuSolver {
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
                     char cell = continuousInput.charAt(i * 9 + j);
-                    if (cell == '0') cell = '.'; // Chuyển 0 thành .
+                    if (cell == '0') cell = '.';
                     if (cell != '.' && (cell < '1' || cell > '9')) {
                         throw new IllegalArgumentException("Invalid character '" + cell + "' at position " + (i * 9 + j + 1));
                     }
